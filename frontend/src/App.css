@@ -1,0 +1,282 @@
+/* Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #2a2a2a; /* Light black background */
+  color: #ffffff; /* White text */
+  line-height: 1.6;
+}
+
+.App {
+  min-height: 100vh;
+}
+
+/* Header Styles */
+.app-header {
+  background-color: #1a1a1a;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid #444;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.logo {
+  height: 50px;
+  width: auto;
+}
+
+.logo-container h1 {
+  color: #ffffff;
+  font-size: 1.5rem;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.logout-btn {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.logout-btn:hover {
+  background-color: #c82333;
+}
+
+/* Main Content */
+.main-content {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Card Styles */
+.card {
+  background-color: #333;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+  border: 1px solid #444;
+}
+
+.card h2 {
+  color: #ffffff;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid #555;
+  padding-bottom: 0.5rem;
+}
+
+/* Form Styles */
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #ccc;
+  font-weight: bold;
+}
+
+.form-control {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #555;
+  border-radius: 4px;
+  background-color: #2a2a2a;
+  color: #ffffff;
+  font-size: 1rem;
+}
+
+.form-control:focus {
+  outline: none;
+  border-color: #007bff;
+}
+
+/* Button Styles */
+.btn {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+}
+
+.btn-success {
+  background-color: #28a745;
+  color: white;
+}
+
+.btn-success:hover {
+  background-color: #1e7e34;
+}
+
+/* Table Styles */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+.table th,
+.table td {
+  padding: 0.75rem;
+  text-align: left;
+  border-bottom: 1px solid #555;
+}
+
+.table th {
+  background-color: #333;
+  color: #ffffff;
+  font-weight: bold;
+}
+
+.table tr:hover {
+  background-color: #3a3a3a;
+}
+
+/* Dashboard Grid */
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.dashboard-card {
+  background-color: #333;
+  padding: 1.5rem;
+  border-radius: 8px;
+  border: 1px solid #444;
+}
+
+.dashboard-card h3 {
+  color: #ffffff;
+  margin-bottom: 1rem;
+}
+
+.stats {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #007bff;
+}
+
+/* Loading and Messages */
+.loading {
+  text-align: center;
+  padding: 2rem;
+  color: #ccc;
+}
+
+.message {
+  padding: 1rem;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+}
+
+.message.success {
+  background-color: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+}
+
+.message.error {
+  background-color: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+}
+
+/* Signature Pad */
+.signature-pad {
+  border: 1px solid #555;
+  background-color: #fff;
+  border-radius: 4px;
+  cursor: crosshair;
+}
+
+.signature-controls {
+  margin-top: 1rem;
+  display: flex;
+  gap: 1rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .app-header {
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+  }
+
+  .main-content {
+    padding: 1rem;
+  }
+
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+}
+/* Ensure footer stays at bottom */
+.App {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Logo container styles */
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.logo-container h1 {
+  margin: 0;
+  font-size: 1.5rem;
+  color: #fff;
+}
+
+/* Footer responsive design */
+@media (max-width: 768px) {
+  footer {
+    padding: 1rem;
+  }
+  
+  .logo-container {
+    flex-direction: column;
+    text-align: center;
+    gap: 0.5rem;
+  }
+  
+  .logo-container h1 {
+    font-size: 1.2rem;
+  }
+}

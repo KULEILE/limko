@@ -1,14 +1,14 @@
 const express = require('express');
 const cors = require('cors');
 require('dotenv').config();
-const pool = require('./config/database');
+const pool = require('./config/database'); // Your db.js file
 
 const app = express();
 
 // Middleware
 app.use(cors());
 app.use(express.json());
-app.use(express.static('public')); // Add this line to serve static files
+app.use(express.static('public')); // serve static files
 
 // Routes
 app.use('/api/auth', require('./routes/auth'));
@@ -22,22 +22,23 @@ app.use('/api/monitoring', require('./routes/monitoring'));
 app.use('/api/export', require('./routes/export'));
 app.use('/api/system', require('./routes/system'));
 app.use('/api/public', require('./routes/public'));
-app.use('/api/upload', require('./routes/upload')); // Add this line for file uploads
+app.use('/api/upload', require('./routes/upload'));
 
-// Test route
+// Health check route
 app.get('/api/health', (req, res) => {
-  res.json({ 
-    message: 'Server is running!', 
-    timestamp: new Date().toISOString() 
+  res.json({
+    message: '✅ Server is running!',
+    timestamp: new Date().toISOString()
   });
 });
 
 const PORT = process.env.PORT || 5000;
 
+// Start server
 app.listen(PORT, async () => {
   console.log(`🚀 Server running on port ${PORT}`);
-  
-  // Test database connection
+
+  // ✅ Test DB connection once at startup
   try {
     const client = await pool.connect();
     console.log('✅ Database connection test successful!');
